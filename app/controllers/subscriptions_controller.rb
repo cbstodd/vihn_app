@@ -4,13 +4,13 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions
   # GET /subscriptions.json
   def index
-    render 'show'
+    @subscriptions = Subscription.all
   end
 
   # GET /subscriptions/1
   # GET /subscriptions/1.json
   def show
-    @subscriptions = Subscription.find(params[:id])
+
   end
 
   # GET /subscriptions/new
