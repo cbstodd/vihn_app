@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: vinh_app_development
+
+test:
+  adapter: postgresql
+  database: vinh_app_test
