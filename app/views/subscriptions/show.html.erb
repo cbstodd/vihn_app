@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
 
+
+<center>
+  <p id="notice"><strong><%= notice %></strong></p>
 <p>
-  <strong>Email:</strong>
+See you soon
   <%= @subscription.email %>
 </p>
+  <%= link_to "Back", new_subscription_path %>
+</center>
 
-<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
-<%= link_to 'Back', subscriptions_path %>
+
+
