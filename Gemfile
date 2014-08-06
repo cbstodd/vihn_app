@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
 gem 'pg'
-
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '~> 4.0.3'
 gem 'autoprefixer-rails'
@@ -23,6 +22,11 @@ group :test do
   gem 'capybara'
   gem 'launchy'
 end
+
+group :production do 
+  gem 'rails_12factor'
+end
+
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
