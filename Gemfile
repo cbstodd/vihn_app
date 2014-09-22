@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 gem 'rails', '4.1.4'
+gem 'unicorn'
 gem 'puma'
 gem 'pg'
 gem 'bootstrap-sass', '~> 3.2.0'
