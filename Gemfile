@@ -13,7 +13,10 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'pry-rails'
+gem 'activeadmin', github: 'activeadmin', branch: '0-6-stable'
+gem 'devise'
+
+
 
 
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -22,6 +25,7 @@ gem 'spring',           group: :development
 group :development do 
   gem 'faker'
   gem 'hirb'
+  gem 'pry-rails'
 end
 
 group :test do 

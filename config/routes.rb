@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+ 
+  root 'subscriptions#new'
 
   resources :subscriptions
+  resources :providers, only: [:index, :show, :destroy]
+  resources :customers
 
-  root 'subscriptions#new'
 
   namespace :admin do 
 

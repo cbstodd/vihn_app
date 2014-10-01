@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922221240) do
+ActiveRecord::Schema.define(version: 20140923192242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20140922221240) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "zip_code"
+    t.text     "profile_info"
+    t.string   "phone_number"
   end
 
   create_table "line_items", force: true do |t|
@@ -35,14 +38,7 @@ ActiveRecord::Schema.define(version: 20140922221240) do
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
   add_index "line_items", ["provider_id"], name: "index_line_items_on_provider_id", using: :btree
 
-  create_table "providers", force: true do |t|
-    t.string   "name"
-    t.decimal  "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "services", force: true do |t|
+  create_table "orders", force: true do |t|
     t.integer  "customer_id"
     t.datetime "placed_at"
     t.decimal  "total_amount"
@@ -50,7 +46,19 @@ ActiveRecord::Schema.define(version: 20140922221240) do
     t.datetime "updated_at"
   end
 
-  add_index "services", ["customer_id"], name: "index_services_on_customer_id", using: :btree
+  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
+
+  create_table "providers", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "service"
+    t.string   "email"
+    t.string   "zip_code"
+    t.string   "phone_number"
+    t.text     "profile_info"
+  end
 
   create_table "subscriptions", force: true do |t|
     t.string   "email"
