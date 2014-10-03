@@ -1,3 +1,5 @@
 == Vinh.com
 
 Putting the world to work. 
+
+app location: http://vinh-app.herokuapp.com
