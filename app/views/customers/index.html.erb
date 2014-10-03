@@ -1,0 +1,9 @@
+<% provide(:title, "Customers") %>
+
+<h1>Customers</h1>
+
+<ul class="tabel">
+  <% for customer in @customers %>
+    <li><%= customer.name %></li>
+  <% end %>
+</ul>

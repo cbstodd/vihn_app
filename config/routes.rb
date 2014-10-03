@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
  
-  root 'subscriptions#new'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  
+  root 'admin/dashboard#index'
 
   resources :subscriptions
-  resources :providers, only: [:index, :show, :destroy]
-  resources :customers
+  resources :providers, only: [:index, :edit, :show, :destroy]
+  resources :customers, only: [:index, :edit, :show, :destroy]
 
-
-  namespace :admin do 
-
-  end
 
 end
